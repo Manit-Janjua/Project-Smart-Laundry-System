@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <title>Smart Laundry Room</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Smart Laundry System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Future Scope</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Project</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <a class="navbar-brand" href="#">SEP728 - Group 1</a>
+          </form>
+          <span class="badge rounded-pill bg-success" id="pubnub_Status"></span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <br>
+      <div class="container" id="machines" align="center">
+        <div class="row">
+          <div class="col-4">
+
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Dryer 1</div>
+              <div class="card-body">
+                <h4 class="card-title"><span class="badge bg-success" id="lc1_timerText"></span></h4>
+                <p class="card-text">Control Center</p>
+                <button type="button" class="btn btn-primary" id="lc1_start" ><i class="fa-solid fa-circle-play fa-2xl"></i></button><button type="button" class="btn btn-primary" id="lc1_stop"><i class="fa-solid fa-circle-stop fa-2xl"></i></button><button type="button" class="btn btn-primary" id="lc1_info"><i class="fa-solid fa-circle-exclamation fa-2xl"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-4">
+
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Dryer 2</div>
+              <div class="card-body">
+                <h4 class="card-title"><span class="badge bg-info" id="timerText2">Demo Placeholder</span></h4>
+                <p class="card-text">Control Center</p>
+                <button type="button" class="btn btn-primary disabled" id="lc2_start"><i class="fa-solid fa-circle-play fa-2xl"></i></button><button type="button" class="btn btn-primary disabled" id="lc2_stop"><i class="fa-solid fa-circle-stop fa-2xl"></i></button><button type="button" class="btn btn-primary disabled" id="lc2_info"><i class="fa-solid fa-circle-exclamation fa-2xl"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-4">
+
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Dryer 3</div>
+              <div class="card-body">
+                <h4 class="card-title"><span class="badge bg-danger">Machine Unavailable</span></h4>
+                <p class="card-text">Control Center</p>
+                <button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-play fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-stop fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-exclamation fa-2xl"></i></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-1 border-bottom"></div>
+        <br>
+        <div class="row">
+          <div class="col-4">
+
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Washer 1</div>
+              <div class="card-body">
+                <h4 class="card-title"><span class="badge bg-info">Demo Placeholder</span></h4>
+                <p class="card-text">Control Center</p>
+                <button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-play fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-stop fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-exclamation fa-2xl"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-4">
+
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Washer 2</div>
+              <div class="card-body">
+                <h4 class="card-title"><span class="badge bg-info">Demo Placeholder</span></h4>
+                <p class="card-text">Control Center</p>
+                <button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-play fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-stop fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-exclamation fa-2xl"></i></button>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-4">
+
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Washer 3</div>
+              <div class="card-body">
+                <h4 class="card-title"><span class="badge bg-info">Demo Placeholder</span></h4>
+                <p class="card-text">Control Center</p>
+                <button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-play fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-stop fa-2xl"></i></button><button type="button" class="btn btn-primary disabled"><i class="fa-solid fa-circle-exclamation fa-2xl"></i></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-1 border-bottom"></div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Date Time</th>
+                  <th scope="col">Humidity [g.m-3]</th>
+                  <th scope="col">Temperature [°C]</th>
+                  <th scope="col">Power Draw [W]</th>
+                </tr>
+              </thead>
+              <tbody id="sd">
+              </tbody>
+            </table>
+          </div>
+          <div class="col-4">
+            <div class="card border-info">
+              <div class="card-header">Action Logs</div>
+              <div class="card-body" id="logger">
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+  <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.6.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/0ca3de1dcc.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const channel = "SEP728_Group1";
+    var encKey = CryptoJS.enc.Utf8.parse(`SEP728Group1MMVS`);
+
+    var logSequence=0, powerSequence=0, MachineState=1, dashboardState=1;
+    var cycleTime=60*50;//in seconds
+    var xtimer;
+
+    const pubnub = new PubNub({
+        publishKey : 'pub-c-089b5dc9-cf8d-432a-b6b2-2f618d295537',
+        subscribeKey : 'sub-c-c807563f-cc5b-47e0-a81c-bc56a9339313',
+        uuid: 'abc',
+        ssl:true,
+    });
+
+
+    $(document).ready($(function() {
+    //laundryControl1 power on
+    $(`#lc1_start`).click(()=>{
+      if(MachineState==1){
+        startMachine();
+      }else{
+        updateLog(`Cycle is already running on Machine 1`,"B");
+      }
+    });
+
+    // power off
+    $(`#lc1_stop`).click(()=>{
+      if(MachineState==0){
+        stopMachine();
+      }
+      else{
+        updateLog(`Cycle is already stopped on Machine 1`,"B");
+      }
+    });
+
+    //get status
+    $(`#lc1_info`).click(()=>{
+      updateStatus();
+    });
+
+    //init event
+    init();
+    //subscribe
+    subscribe();
+    }));
+
+    function init() {
+      $("#lc1_timerText").text('Machine available');
+    }
+
+    function startTimer(duration, display) {
+      var timer = duration,
+          minutes, seconds;
+          xtimer = setInterval(function() {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          display.text(`Remaining time: ${minutes + ":" + seconds}`);
+
+          if (--timer <= -1) {
+              updateLog(`Laundry completed on Machine 1`,"G");
+              clearInterval(xtimer);
+              MachineState = 0;
+          }
+      }, 1000);
+    }
+
+  function startMachine() {
+    publish(0);
+  }
+  
+  function stopMachine() {
+    publish(1);
+  }
+  
+  function updateStatus(){
+    publish(2);
+  }
+
+  function updatePubnubStatus(msg){
+    $('#pubnub_Status').text(msg);
+  }
+
+  function encrypt(msg){
+    try{
+      return CryptoJS.AES.encrypt(msg, encKey, {mode:CryptoJS.mode.ECB}).toString();
+    }
+    catch{
+      console.log(`Cant encrypt the message`);
+    }
+  }
+
+  function decrypt(msg){
+    try{
+      return CryptoJS.enc.Utf8.stringify(CryptoJS.AES.decrypt(msg, encKey,{mode:CryptoJS.mode.ECB}));
+    }catch{
+      console.log(`Cant decrypt the message`);
+    }
+  }
+
+  function updateLog(postLog, type){
+    logSequence++;
+    if(type =="R"){
+      $('#logger').append(`
+        <div class="alert alert-dismissible alert-danger"><p class="mb-0">${logSequence} -> ${postLog}</p></div>
+      `);
+    }
+    if(type == "Y"){
+      $('#logger').append(`
+        <div class="alert alert-dismissible alert-warning"><p class="mb-0">${logSequence} -> ${postLog}</p></div>
+      `);
+    }
+    if(type == "B"){
+      $('#logger').append(`
+        <div class="alert alert-dismissible alert-info"><p class="mb-0">${logSequence} -> ${postLog}</p></div>
+      `);
+    }
+    if(type == "G"){
+      $('#logger').append(`
+        <div class="alert alert-dismissible alert-success"><p class="mb-0">${logSequence} -> ${postLog}</p></div>
+      `);
+    }
+  }
+
+  function subscribe() {
+        pubnub.addListener({
+            message: function(event) {
+              try{
+                event.message = JSON.parse(String((decrypt(event.message))).replace(/'/g, '"'));
+              }
+              catch{
+                console.log(`Cant decrypt and parse to JSON`);
+              }
+              switch (event.message.action) {
+                case "0":{
+                  // sucessfully power up the machine
+                  if(event.message.plugStatus != undefined){
+                    try{
+                      if(event.message.timerData != false && event.message.timerData != undefined && event.message.timerData > 0) cycleTime = event.message.timerData;
+                    }catch{
+                      console.log(`Cant update the cycletime`);
+                    }
+
+                    if(MachineState == 1){
+                      $('#lc1_timerText').removeClass(`bg-success`).addClass(`bg-warning`);
+                      startTimer(cycleTime, $('#lc1_timerText'));
+                      updateLog(`Cycle has been started on Machine 1`,"G");
+                      MachineState = 0;
+                    }else{
+                      //the timer is already on
+                      clearInterval(xtimer);
+                      $('#lc1_timerText').removeClass(`bg-success`).addClass(`bg-warning`);
+                      startTimer(cycleTime, $('#lc1_timerText'));
+                      updateLog(`Cycle has been started on Machine 1`,"G");
+                      MachineState = 0;
+                    }
+                  } else {
+                    //internal message
+                  }
+
+                  break;
+                }
+                case "1":{
+                  // sucessfully power down the machine
+                  if(MachineState == 0){
+                    clearInterval(xtimer);
+                    $('#lc1_timerText').removeClass(`bg-warning`).addClass(`bg-success`).text('Machine available');
+                    updateLog(`Cycle has been stopped on Machine 1`,"R");
+                    MachineState = 1;
+                  }else{
+                    //the timer is already off
+                  }
+                  break;
+                }
+                case "2":{
+                  // received state change
+                  try{
+                    if(event.message.plugPower != undefined){
+                      updateSensorTable(event.message);
+                      updateLog(`Status has been updated`,"B");
+                    }
+                    //if plug is on and machine is in the cycle
+                    if(event.message.timerData != "false" && event.message.timerData != undefined) {
+                      updateTimerData(event.message.timerData);
+                    }
+                  }
+                  catch(e){
+                    console.log(`There is error in parsing status update message`);
+                  }
+                  break;
+                }
+                case "3":{
+                  //kill switch
+                  killSwitch();
+                  updateLog(`Kill switch has been execuated becuase of ${(event.message.errorDescription != undefined)? event.message.errorDescription : 'undefined'}. Laundry room is not available now`,"R");
+                  break;
+                }
+                case "4":{
+                  // there is error
+                  try{
+                    updateLog(`There is an error in the system, code# ${(event.message.errorCode != undefined)?event.message.errorCode:'undefined'}, -> ${(event.message.errorDescription != undefined)? event.message.errorDescription : 'undefined'}`,"R");
+                  }catch(e){ 
+                    console.log(`There is error in parsing error message`);
+                  }
+                  break;
+                }
+                default:{
+                  console.log(`_OndataReceived unexpected switch statement -> ${JSON.stringify(event.message)}`);
+                }
+              }
+            },
+          connect:()=>{
+
+          },
+          reconnect:()=>{
+
+          },
+          status: ()=>{
+            //starting the system
+            (dashboardState == 1)? updateLog(`System has been initialized`,"G"):null;
+            dashboardState = 0;
+          },
+        });
+
+        pubnub.subscribe({
+            channels: [channel],
+        });
+    }
+    
+    function publish(action){
+      try{
+        dataInc = encrypt(JSON.stringify({
+          timestamp: Date.now(),
+          action:action.toString(),
+        }));
+
+        pubnub.publish({
+          channel: channel,
+          message: dataInc
+      });
+      }
+      catch(e){
+        console.log(`cant encrypt the message ${e}`);
+      }
+    }
+
+    function updateSensorTable(data, clearTable) {
+      powerSequence++;
+      if(clearTable) clearSensorTable();
+
+      $('#sd').append(`
+          <tr class="table-dark">
+            <th scope="row">${powerSequence}</th>
+            <td>${data.timestamp}</td>
+            <td>${data.humidity}</td>
+            <td>${data.temperature}</td>
+            <td>${data.plugPower}</td>
+          </tr>
+      `);
+    }
+
+    function clearSensorTable() {
+      $('#sd').empty();
+    }
+
+    function killSwitch(){
+      try{
+        clearInterval(xtimer);
+      }
+      catch(e){
+        console.log(`Failed to stop the timer`);
+      }
+
+      $('#lc1_timerText').removeClass(`bg-success bg-warning`).addClass(`bg-danger`).text(`Kill Switch Mode`);
+      $('#lc1_start').addClass(`disabled`);
+      $('#lc1_stop').addClass(`disabled`);
+      $('#lc1_info').addClass(`disabled`);
+    }
+    function updateTimerData(timerVal){
+      try{
+        clearInterval(xtimer);
+        startTimer(timerVal, $('#lc1_timerText'));
+      }
+      catch(e){
+        console.log(`Failed to update the timer`);
+      }
+    }
+    </script> 
+</html>
